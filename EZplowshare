@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#skrypt do pobierania z serwerow hostujących pliki
+#aby poprawnie działał w miejsce login i hasło wpisz swoje dane
+#działa na pewno dla RAPIDGATOR, innych nie sprawdzałem ale dla większości powinno być ok
+#do pracy wymaga pakietu PLOWSHARE
+
+#w przypadku konta płatnego nie robi problemu z oczekiwaniem po pobraniu z tego samego hosta
+
+echo 'Skrypt do pobierania z RAPIDGATOR przez konsolę'
+
+
+echo 'Linki wczytywane z pliku filelist.txt'
+
+#tutaj sobie wpisz kiedy kończy Ci się płatność konta, wtedy o nim nie zapomnisz
+echo 'Konto wygasa 6 października'
+
+I=1
+
+#linki wczytywane z pliku filelist.txt, jeżeli chcesz inny to zmień poniżej
+for WERS in $(cat filelist.txt)
+do 
+
+#w lini poniżej wpisz swoje dane logowania
+plowdown -a LOGIN:HASLO $WERS
+I=`expr $I + 1`
+done
